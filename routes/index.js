@@ -9,4 +9,7 @@ router.get('/', function(req, res) {
 router.get('/quizes/question', quizController.question);
 router.get('/quizes/answer', quizController.answer);
 
+router.get('/author', function(req, res){
+  res.render('author', {author: 'Oscar Navarro', foto:'images/foto.png'})
+});
 module.exports = router;
