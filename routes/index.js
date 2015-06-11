@@ -12,4 +12,7 @@ router.get('/quizes/answer', quizController.answer);
 router.get('/author', function(req, res){
   res.render('author', {author: 'Oscar Navarro', foto:'images/foto.png'});
 });
+router.get('/*', function(req, res){
+  res.send("La pagina que busca no existe");
+});
 module.exports = router;
