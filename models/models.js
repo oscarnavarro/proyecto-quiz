@@ -37,6 +37,12 @@ sequelize.sync().then(function(){
       });
       Quiz.create({ pregunta: 'Capital de Portugal',
                     respuesta: 'Lisboa'
+      });
+      Quiz.create({ pregunta: 'Año en que finalizó la segunda guerra mundial',
+                    respuesta: '1945'
+      });
+      Quiz.create({ pregunta: 'Quién escribió el libro Don Quijote de la Mancha',
+                    respuesta: 'Miguel de Cervantes Saavedra'
       })
       .then(function(){console.log('Base de Datos inicializada');});
     };
