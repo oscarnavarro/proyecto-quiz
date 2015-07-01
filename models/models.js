@@ -33,16 +33,20 @@ sequelize.sync().then(function(){
   Quiz.count().then(function(count){
     if(count === 0){
       Quiz.create({ pregunta: 'Capital de Italia',
-                    respuesta: 'Roma'
+                    respuesta: 'Roma',
+                    tema: 'humanidades'
       });
       Quiz.create({ pregunta: 'Capital de Portugal',
-                    respuesta: 'Lisboa'
+                    respuesta: 'Lisboa',
+                    tema: 'humanidades'
       });
       Quiz.create({ pregunta: 'Año en que finalizó la segunda guerra mundial',
-                    respuesta: '1945'
+                    respuesta: '1945',
+                    tema: 'otro'
       });
       Quiz.create({ pregunta: 'Quién escribió el libro Don Quijote de la Mancha',
-                    respuesta: 'Miguel de Cervantes Saavedra'
+                    respuesta: 'Miguel de Cervantes Saavedra',
+                    tema: 'humanidades'
       })
       .then(function(){console.log('Base de Datos inicializada');});
     };

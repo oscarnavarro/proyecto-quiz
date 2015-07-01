@@ -1,12 +1,41 @@
 <table>
+  <th>
+    <tr>
+      <td>
+        Pregunta
+      </td>
+      <td>
+        Tema
+      </td>
+      <td>
+        Opción 1
+      </td>
+      <td>
+        Opción 2
+      </td>
+    </tr>
+  </th>
   <% var i; for(i=0; i < quizes.length; i++){ %>
+
     <tr>
       <td>
         <a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
       </td>
+      <td>
+        <%= quizes[i].tema %>
+      </td>
+      <td>
+        <a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a>
+      </td>
+      <td>
+        <form  action="quizes/<%= quizes[i].id %>?_method=delete" method="post">
+          <button type="submit" onclick="return confirm('Borrar: <%=quizes[i].pregunta %>');">borrar</button>
+        </form>
+      </td>
     </tr>
   <% } %>
 </table>
+<br><a href="/quizes/new"><button type="button" >Crear pregunta</button></a>
 <form  action="/quizes" method="get">
   <input type="text" name="search" value="Pregunta a consultar">
   <input type="submit" name="enviar" value="Buscar">
